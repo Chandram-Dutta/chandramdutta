@@ -11,15 +11,18 @@ class ErrorScreen extends ConsumerWidget {
     GoRouter route = ref.watch(goRouteAndroidProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OOPSSSS: Error'),
+        title: const Text('Now Listen to Dumbledore'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(
-                "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTkwNTgwODc3NzY0MTQyOTcy/dumbledore-quotes.webp"),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image.network(
+                  "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTkwNTgwODc3NzY0MTQyOTcy/dumbledore-quotes.webp"),
+            ),
             const Text(
               'Curiosity is not a sin, but we should exercise caution with our curiosity',
             ),
@@ -30,7 +33,7 @@ class ErrorScreen extends ConsumerWidget {
               onPressed: () {
                 route.go('/android');
               },
-              child: const Text("Go Homse"),
+              child: const Text("Route Error: Go Home"),
             )
           ],
         ),
