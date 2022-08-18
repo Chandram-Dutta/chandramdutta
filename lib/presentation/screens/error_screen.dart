@@ -24,7 +24,9 @@ class ErrorScreen extends ConsumerWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child: Image.network(
-                    "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTkwNTgwODc3NzY0MTQyOTcy/dumbledore-quotes.webp"),
+                  "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTkwNTgwODc3NzY0MTQyOTcy/dumbledore-quotes.webp",
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             const Text(
