@@ -1,3 +1,4 @@
+import 'package:chandramdutta/constants.dart';
 import 'package:chandramdutta/presentation/widgets/social_buttons.dart';
 import 'package:chandramdutta/providers/provider.dart';
 import 'package:chandramdutta/responsive/responsive.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class IOSHomePage extends ConsumerWidget {
   const IOSHomePage({Key? key}) : super(key: key);
@@ -97,7 +99,9 @@ class IOSHomePage extends ConsumerWidget {
                                   SizedBox(
                                     height: 50,
                                     child: CupertinoButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        launchUrlString(mail);
+                                      },
                                       child: const Icon(CupertinoIcons.mail),
                                     ),
                                   ),
@@ -128,7 +132,9 @@ class IOSHomePage extends ConsumerWidget {
                                 child: SizedBox(
                                   height: 50,
                                   child: CupertinoButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      launchUrlString(mail);
+                                    },
                                     child: const Icon(CupertinoIcons.mail),
                                   ),
                                 ),
@@ -156,24 +162,23 @@ class IOSHomePage extends ConsumerWidget {
                           children: const [
                             SocialButtonsiOS(
                               icon: FaIcon(FontAwesomeIcons.twitter),
-                              url: "https://twitter.com/ChandramDutta",
+                              url: twitterUrl,
                             ),
                             SocialButtonsiOS(
                               icon: FaIcon(FontAwesomeIcons.github),
-                              url: "https://www.github.com/Chandram-Dutta",
+                              url: githubUrl,
                             ),
                             SocialButtonsiOS(
                               icon: FaIcon(FontAwesomeIcons.linkedinIn),
-                              url:
-                                  "https://www.linkedin.com/in/chandram-dutta-a8b8a817b/",
+                              url: linkedinUrl,
                             ),
                             SocialButtonsiOS(
                               icon: FaIcon(FontAwesomeIcons.instagram),
-                              url: "https://www.instagram.com/chandram.dutta",
+                              url: instagramUrl,
                             ),
                             SocialButtonsiOS(
                               icon: FaIcon(FontAwesomeIcons.snapchat),
-                              url: "",
+                              url: snapchatUrl,
                             )
                           ],
                         ),
@@ -189,7 +194,7 @@ class IOSHomePage extends ConsumerWidget {
                   const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text(
-                      "I am Chandram Dutta. A 18 years old Flutter Developer with experience in Firebase, Appwrite and more. I am open to any opportunity to learn and grow.",
+                      intro,
                       textAlign: TextAlign.justify,
                       style: TextStyle(
                         fontSize: 16,

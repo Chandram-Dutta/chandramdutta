@@ -1,3 +1,4 @@
+import 'package:chandramdutta/constants.dart';
 import 'package:chandramdutta/presentation/widgets/download_resume.dart';
 import 'package:chandramdutta/presentation/widgets/social_buttons.dart';
 import 'package:chandramdutta/providers/provider.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class AndroidHomePage extends ConsumerWidget {
   const AndroidHomePage({Key? key}) : super(key: key);
@@ -118,7 +120,9 @@ class AndroidHomePage extends ConsumerWidget {
                                   ),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                launchUrlString(mail);
+                              },
                               child: const Icon(Icons.mail),
                             ),
                           ),
@@ -151,7 +155,9 @@ class AndroidHomePage extends ConsumerWidget {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrlString(mail);
+                          },
                           child: const Icon(Icons.mail),
                         ),
                       ),
@@ -179,24 +185,23 @@ class AndroidHomePage extends ConsumerWidget {
                   children: const [
                     SocialButtonsAndroid(
                       icon: FaIcon(FontAwesomeIcons.twitter),
-                      url: "https://twitter.com/ChandramDutta",
+                      url: twitterUrl,
                     ),
                     SocialButtonsAndroid(
                       icon: FaIcon(FontAwesomeIcons.github),
-                      url: "https://www.github.com/Chandram-Dutta",
+                      url: githubUrl,
                     ),
                     SocialButtonsAndroid(
                       icon: FaIcon(FontAwesomeIcons.linkedinIn),
-                      url:
-                          "https://www.linkedin.com/in/chandram-dutta-a8b8a817b/",
+                      url: linkedinUrl,
                     ),
                     SocialButtonsAndroid(
                       icon: FaIcon(FontAwesomeIcons.instagram),
-                      url: "https://www.instagram.com/chandram.dutta",
+                      url: instagramUrl,
                     ),
                     SocialButtonsAndroid(
                       icon: FaIcon(FontAwesomeIcons.snapchat),
-                      url: "https://www.instagram.com/chandram.dutta",
+                      url: snapchatUrl,
                     ),
                   ],
                 ),
@@ -212,7 +217,7 @@ class AndroidHomePage extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              "I am Chandram Dutta. A 18 years old Flutter Developer with experience in Firebase, Appwrite and more. I am open to any opportunity to learn and grow.",
+              intro,
               style: Theme.of(context).textTheme.bodySmall,
               textAlign: TextAlign.justify,
             ),
