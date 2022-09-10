@@ -38,7 +38,9 @@ class AndroidHomePage extends ConsumerWidget {
                       ),
                       ListTile(
                         title: const Text('About'),
-                        onTap: () {},
+                        onTap: () {
+                          showAboutDialog(context: context);
+                        },
                       ),
                       ListTile(
                         title: const Text('Open Source Libraries'),
@@ -83,6 +85,51 @@ class AndroidHomePage extends ConsumerWidget {
         children: [
           isDesktop(context, 600)
               ? NavigationRail(
+                  onDestinationSelected: (value) {
+                    switch (value) {
+                      case 0:
+                        break;
+                      case 1:
+                        break;
+                      case 2:
+                        showAboutDialog(
+                          context: context,
+                          applicationName: 'Chandram Dutta',
+                          applicationVersion: "1.0.2 on Flutter 3.3.1",
+                          applicationIcon: ClipOval(
+                            child: SizedBox(
+                              height: 80,
+                              width: 80,
+                              child: FadeInImage.memoryNetwork(
+                                placeholder: kTransparentImage,
+                                image:
+                                    'https://avatars.githubusercontent.com/u/81961406?s=400&u=7a11ec4555bdf241738936b92cc5c9db5336df3a&v=4',
+                              ),
+                            ),
+                          ),
+                        );
+                        break;
+                      case 3:
+                        showLicensePage(
+                          context: context,
+                          applicationName: 'Chandram Dutta',
+                          applicationVersion: "1.0.2 on Flutter 3.3.1",
+                          applicationIcon: ClipOval(
+                            child: SizedBox(
+                              height: 80,
+                              width: 80,
+                              child: FadeInImage.memoryNetwork(
+                                placeholder: kTransparentImage,
+                                image:
+                                    'https://avatars.githubusercontent.com/u/81961406?s=400&u=7a11ec4555bdf241738936b92cc5c9db5336df3a&v=4',
+                              ),
+                            ),
+                          ),
+                        );
+                        break;
+                      default:
+                    }
+                  },
                   destinations: const [
                     NavigationRailDestination(
                       icon: FaIcon(FontAwesomeIcons.gears),

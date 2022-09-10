@@ -13,3 +13,7 @@ final goRouteiOSProvider = Provider<GoRouter>((ref) {
 final osTypeProvider = StateProvider<int>((ref) {
   return 0;
 });
+
+final destinationProvider = StateProvider<int>((ref) {
+  return 0;
+});

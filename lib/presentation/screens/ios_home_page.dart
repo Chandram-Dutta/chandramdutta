@@ -14,49 +14,12 @@ class IOSHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    void _showActionSheet(BuildContext context) {
-      showCupertinoModalPopup<void>(
-        context: context,
-        builder: (BuildContext context) => CupertinoActionSheet(
-          message: const Text("Chandram Dutta © 2022"),
-          actions: <CupertinoActionSheetAction>[
-            CupertinoActionSheetAction(
-              onPressed: () {},
-              child: const Text('Tech Stack'),
-            ),
-            CupertinoActionSheetAction(
-              onPressed: () {},
-              child: const Text('Projects'),
-            ),
-            CupertinoActionSheetAction(
-              onPressed: () {},
-              child: const Text('About'),
-            ),
-            CupertinoActionSheetAction(
-              isDestructiveAction: true,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Back'),
-            )
-          ],
-        ),
-      );
-    }
-
     return Stack(
       children: [
         CupertinoPageScaffold(
           child: CustomScrollView(slivers: [
-            CupertinoSliverNavigationBar(
-              leading: CupertinoButton(
-                alignment: Alignment.center,
-                onPressed: () {
-                  _showActionSheet(context);
-                },
-                child: const Icon(CupertinoIcons.sidebar_left),
-              ),
-              largeTitle: const Text('Portfolio'),
+            const CupertinoSliverNavigationBar(
+              largeTitle: Text('Portfolio'),
             ),
             SliverFillRemaining(
               child: Column(
