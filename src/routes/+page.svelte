@@ -1,4 +1,9 @@
 <h1 class="text-4xl font-bold">Hi, I am Chandram.</h1>
+<a
+    class="h-8 py-4"
+    href="https://drive.google.com/file/d/10HFFuemNwOnNhKkyOMIEfrnibsr30bbh/view?usp=sharing"
+    ><u>Resume</u></a
+>
 <div class="flex flex-row flex-wrap py-16">
     <a href="https://github.com/Chandram-Dutta">
         <img class="h-8 pr-4" alt="GitHub" src="github.svg" />
